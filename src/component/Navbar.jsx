@@ -32,7 +32,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <a href="https://github.com/Amran13" target="_blank">
-                    <button className="btn bg-gradient-to-r from-indigo-500 to-blue-500 text-white border-none hover:from-indigo-600 hover:to-blue-600 flex items-center gap-2">
+                    <button className="btn bg-linear-to-r from-indigo-500 to-blue-500 text-white border-none hover:from-indigo-600 hover:to-blue-600 flex items-center gap-2">
                         <img src={github} alt="" />
                         Contribute
                     </button>

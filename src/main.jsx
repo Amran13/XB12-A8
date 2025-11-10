@@ -8,6 +8,7 @@ import {
 import React from 'react'
 import MyApps from './component/MyApp.jsx';
 import Home from './component/Home.jsx';
+import ErrorPage from './component/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -15,16 +16,20 @@ const router = createBrowserRouter([
     element: <App></App>,
     children: [
       {
-        path : "/",
-        element : <Home></Home>
+        path: "/",
+        element: <Home></Home>
       },
       {
         path: "/my-apps",
         element: <MyApps />,
       },
       {
-        path : "/installations",
-        element : <div>Installations</div>
+        path: "/installations",
+        element: <div>Installations</div>
+      },
+      {
+        path: '*',
+        element: <ErrorPage></ErrorPage>
       }
     ]
   },
