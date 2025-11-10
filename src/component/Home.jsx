@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from './Header';
+import TopApp from './TopApp';
 
 const Home = () => {
     return (
         <div>
-            <h2>This is Home pages</h2>
+            <Header></Header>
+            <TopApp></TopApp>
         </div>
     );
 };

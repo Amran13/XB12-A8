@@ -19,7 +19,7 @@ const MyApps = () => {
             key={app.id}
             className="card bg-base-100 shadow-md hover:shadow-xl transition p-4"
           >
-            <figure className="h-48 bg-gray-50 flex items-center justify-center rounded-xl">
+            <figure className="h-48  bg-gray-50 flex items-center justify-center rounded-xl">
               <img
                 src={app.image}
                 alt={app.title}

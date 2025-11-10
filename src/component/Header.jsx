@@ -4,25 +4,29 @@ import appleStore from '../assets/apple_store.svg'
 import phoneImg from '../assets/hero.png'
 const Header = () => {
     return (
-        <div className='text-center'>
+        <div className='text-center lg:mt-32'>
             <div className='space-y-2'>
                 <h2 className='text-7xl font-bold'>We Build</h2>
                 <h2 className='text-7xl font-bold'><span className='text-violet-700'>Productive </span>Apps</h2>
             </div>
             <p className='font-medium text-gray-500 mt-10 text-xl'>At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting. <br></br> Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
             <div className='space-x-6 mt-8'>
-                <button className='btn border rounded border-gray-300 px-6 py-2'>
-                    <div className='flex items-center space-x-2'>
-                        <img src={playStore} alt="play_store" />
-                        <p className='text-gray-500 font-bold'>Google Play</p>
-                    </div>
-                </button>
-                <button className='btn border rounded border-gray-300 px-6 py-2'>
-                    <div className='flex items-center space-x-2'>
-                        <img src={appleStore} alt="play_store" />
-                        <p className='text-gray-500 font-bold'>Apple Store</p>
-                    </div>
-                </button>
+                <a href="https://play.google.com/store/games?hl=en" target='_blank'>
+                    <button className='btn border rounded border-gray-300 px-6 py-2'>
+                        <div className='flex items-center space-x-2'>
+                            <img src={playStore} alt="play_store" />
+                            <p className='text-gray-500 font-bold'>Google Play</p>
+                        </div>
+                    </button>
+                </a>
+                <a href="https://www.apple.com/app-store/" target='_blank'>
+                    <button className='btn border rounded border-gray-300 px-6 py-2'>
+                        <div className='flex items-center space-x-2'>
+                            <img src={appleStore} alt="play_store" />
+                            <p className='text-gray-500 font-bold'>Apple Store</p>
+                        </div>
+                    </button>
+                </a>
             </div>
             <div className='flex justify-center mt-20'>
                 <img src={phoneImg} alt="" />

@@ -7,16 +7,28 @@ import {
 } from "react-router-dom";
 import React from 'react'
 import MyApps from './component/MyApp.jsx';
+import Home from './component/Home.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    children: [
+      {
+        path : "/",
+        element : <Home></Home>
+      },
+      {
+        path: "/my-apps",
+        element: <MyApps />,
+      },
+      {
+        path : "/installations",
+        element : <div>Installations</div>
+      }
+    ]
   },
-  {
-    path: "/my-apps",
-    element: <MyApps />,
-  },
+
 ]);
 
 
