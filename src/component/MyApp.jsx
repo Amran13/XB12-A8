@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FaDownload, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const MyApps = () => {
@@ -20,7 +21,7 @@ const MyApps = () => {
     <div className="max-w-7xl mx-auto py-12 px-4">
       <div className="flex flex-col sm:flex-row justify-between items-center mb-8">
         <h2 className="text-2xl font-bold mb-4 sm:mb-0">
-           (<span className="text-purple-600">{filteredApps.length}</span>) app found
+          (<span className="text-purple-600">{filteredApps.length}</span>) app found
         </h2>
         <input
           type="text"
@@ -48,13 +49,18 @@ const MyApps = () => {
                     {app.title}
                   </h3>
                   <div className="flex justify-between items-center w-full mt-2 text-sm">
-                    <span className="flex items-center gap-1 text-success">
-                      <i className="fa-solid fa-download"></i>{" "}
-                      {(app.downloads / 1_000_000).toFixed(1)}M
-                    </span>
-                    <span className="flex items-center gap-1 text-purple-500">
-                      <i className="fa-solid fa-star"></i> {app.ratingAvg}
-                    </span>
+                    <div className="flex items-center">
+                      <FaDownload />
+                      <span className="flex items-center gap-1 text-success">
+                        <i className="fa-solid fa-download"></i> {(app.downloads / 1_000_000).toFixed(1)}M
+                      </span>
+                    </div>
+                    <div className="flex items-center">
+                      <FaStar />
+                      <span className="flex items-center gap-1 text-purple-500">
+                        <i className="fa-solid fa-star"></i> {app.ratingAvg}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>

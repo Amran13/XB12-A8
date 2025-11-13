@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
-import { toast } from "react-hot-toast";
+import { toast, Toaster } from "react-hot-toast";
 
 const MyAppDetails = () => {
     const { id } = useParams();
@@ -19,6 +19,7 @@ const MyAppDetails = () => {
             });
     }, [id]);
 
+    
     const handleInstall = () => {
         const stored = JSON.parse(localStorage.getItem("installedApps")) || [];
         if (!stored.some(a => a.id === app.id)) {
@@ -33,6 +34,7 @@ const MyAppDetails = () => {
 
     return (
         <div className="max-w-6xl mx-auto px-4 py-10">
+           
             <div className="grid md:grid-cols-3 gap-8 items-center border-b border-purple-300 pb-6">
                 <div className="flex justify-center">
                     <img src={app.image} alt={app.title} className="w-48 h-48 rounded-2xl shadow-lg object-cover" />
@@ -48,7 +50,7 @@ const MyAppDetails = () => {
                     <button
                         disabled={installed}
                         onClick={handleInstall}
-                        className={`btn mt-4 text-white ${installed ? "bg-gray-400 cursor-not-allowed" : "bg-gradient-to-r from-green-400 to-cyan-500"}`}
+                        className={`btn mt-4 text-white ${installed ? "bg-gray-400 cursor-not-allowed" : "bg-linear-to-r from-green-400 to-cyan-500"}`}
                     >
                         {installed ? "Installed" : `Install Now (${app.size}MB)`}
                     </button>

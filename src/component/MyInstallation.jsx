@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { toast } from "react-hot-toast";
+import { toast, Toaster } from "react-hot-toast";
 
 const MyInstallation = () => {
   const [installedApps, setInstalledApps] = useState([]);
@@ -9,17 +9,17 @@ const MyInstallation = () => {
     const stored = JSON.parse(localStorage.getItem("installedApps")) || [];
     setInstalledApps(stored);
   }, []);
-
+  
   const handleUninstall = (id) => {
     const updated = installedApps.filter(app => app.id !== id);
     setInstalledApps(updated);
-    localStorage.setItem("installedApps", JSON.stringify(updated));
     toast.success("App uninstalled successfully");
+    localStorage.setItem("installedApps", JSON.stringify(updated));
   };
-
+  
   const sortedApps = [...installedApps].sort((a, b) => 
     sortOrder === "High-Low" ? b.downloads - a.downloads : a.downloads - b.downloads
-  );
+);
 
   if (!installedApps.length) return <p className="text-center mt-20 text-lg">No Installed Apps</p>;
 
@@ -31,7 +31,7 @@ const MyInstallation = () => {
           className="select select-bordered"
           value={sortOrder}
           onChange={(e) => setSortOrder(e.target.value)}
-        >
+          >
           <option>High-Low</option>
           <option>Low-High</option>
         </select>
