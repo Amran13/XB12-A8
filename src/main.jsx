@@ -9,6 +9,8 @@ import React from 'react'
 import MyApps from './component/MyApp.jsx';
 import Home from './component/Home.jsx';
 import ErrorPage from './component/ErrorPage.jsx';
+import MyAppDetails from './component/MyAppDetails.jsx';
+import MyInstallation from './component/MyInstallation.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,8 +26,12 @@ const router = createBrowserRouter([
         element: <MyApps />,
       },
       {
+        path: '/my-apps/:id',
+        element: <MyAppDetails />,
+      },
+      {
         path: "/installations",
-        element: <div>Installations</div>
+        element: <MyInstallation></MyInstallation>
       },
       {
         path: '*',
